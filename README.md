@@ -21,3 +21,8 @@ Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We 
 
 `Oh My ZSH` can be configured via the `.zshrc` configuration file ([using current aliases and nvim](https://github.com/cjairm/mac_conf/blob/main/.zshrc#L132-L137)):
 - `zshconf`
+
+## Themes terminals
+1. [Color themes for default macOS Terminal.app](https://github.com/lysyi3m/macos-terminal-themes)
+2. [Spaceship ZSH](https://github.com/spaceship-prompt/spaceship-prompt)
+3. [Powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
