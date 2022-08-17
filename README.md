@@ -26,3 +26,6 @@ Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We 
 1. [Color themes for default macOS Terminal.app](https://github.com/lysyi3m/macos-terminal-themes)
 2. [Spaceship ZSH](https://github.com/spaceship-prompt/spaceship-prompt)
 3. [Powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+
+## Yabai
+## Tmux
