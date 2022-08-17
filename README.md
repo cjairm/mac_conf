@@ -1,2 +1,2 @@
-# mac_conf
-Productivity Configuration
+# Productivity Configuration for Mac
+
