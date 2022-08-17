@@ -19,5 +19,5 @@ Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We 
 - Git integration.
 - Etc...
 
-`Oh My ZSH` can be configured via the `.zshrc` configuration file (using current aliases and nvim):
+`Oh My ZSH` can be configured via the `.zshrc` configuration file ([using current aliases and nvim](https://github.com/cjairm/mac_conf/blob/main/.zshrc#L132-L137)):
 - `zshconf`
