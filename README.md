@@ -19,8 +19,11 @@ Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We 
 - Git integration.
 - Etc...
 
-`Oh My ZSH` can be configured via the `.zshrc` configuration file ([using current aliases and nvim](https://github.com/cjairm/mac_conf/blob/main/.zshrc#L132-L137)):
+`Oh My ZSH` can be configured via the `.zshrc` configuration file ([using current aliases and nvim](https://github.com/cjairm/mac_conf/blob/main/.zshrc#L132-L137))
+
+#### Conf files
 - `zshconf`
+- `ohmyzshconf`
 
 ## Themes terminals
 1. [Color themes for default macOS Terminal.app](https://github.com/lysyi3m/macos-terminal-themes)
@@ -45,6 +48,9 @@ chmod +x ~/.config/yabai/yabairc
 ```
 - [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/yabairc)
 
+#### Conf file
+- `yabaiconf`
+
 ## skhd
 - Where to put the config file?
 ```
@@ -53,4 +59,136 @@ chmod +x ~/.config/skhd/skhdrc
 ```
 - [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/skhdrc)
 
+### Additional Mac System Settings
+
+- Navigate to `System Preferences > Accessibility > Display` and make sure "Reduce Motion" is `selected`.
+
+![Screen Shot 2022-08-17 at 8 09 25 PM](https://user-images.githubusercontent.com/33442330/185270273-9d660456-8e58-436f-8823-0e1824a9e502.png)
+
+- Configure "Mission Control" Settings for Yabai. Go to `System Preferences > Mission Control`
+  - In the Mission Control preferences pane in System Preferences, the setting "Displays have separate Spaces" must be `enabled`.
+  - In the Mission Control preferences pane in System Preferences, the setting "Automatically rearrange Spaces based on most recent use" should be `disabled` for commands that rely on the ordering of spaces to work reliably.
+
+![Screen Shot 2022-08-17 at 8 15 34 PM](https://user-images.githubusercontent.com/33442330/185271018-5e83d116-8cb5-4ab4-959d-9b1fb903595d.png)
+
+```
+--------------------------------------
+# Will automatically start Yabai when computer starts
+brew services start yabai
+
+# Will automatically start skhd when computer starts
+brew services start skhd
+--------------------------------------
+```
+
+#### Conf file
+- `skhdrcconf`
+
 ## Tmux
+
+With tmux, you can create multiple sessions which are totally independent from your terminal. That’s why it’s called a terminal multiplexer. If you already know GNU screen (another terminal multiplexer), tmux is similar but more powerful, and easier to config.
+
+#### Protection Against Terminal Crashes
+Since your tmux session is independent from your terminal, you don’t need to worry anymore if you close it or even if it crashes. You can always reattach your session afterward without any problem.
+
+#### Saving tmux Sessions
+It’s possible to save tmux sessions in a file and reopen them later, even after switching off your computer.
+
+#### Remote Pair Programming
+A tmux session can be attached to many clients (terminals), even via SSH. It means that you can do pair programming with another developer using tmux and Vim, by sharing the same session.
+
+### Installation
+
+- [Official docs](https://github.com/tmux/tmux/wiki)
+
+```
+brew install tmux
+```
+- Where to put the config file?
+```
+touch ~/.tmux.conf
+chmod +x ~/.tmux.conf
+```
+- [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/.tmux.conf)
+- General Organization
+
+![Screen Shot 2022-08-17 at 8 36 37 PM](https://user-images.githubusercontent.com/33442330/185273021-b07c206d-e9a0-4ab7-b599-7c061565e755.png)
+
+#### The tmux Server
+The tmux server manage every single tmux session. If you kill it, you kill every session too. To do so, you can run the command `tmux kill-server`.
+
+#### Sessions
+We’ve seen what are tmux sessions above. You can detach them from a client (and let them run in the background), and attach them back.
+
+#### Windows
+A tmux window represent an entire screen. You can have multiple windows open in one session. These windows are represented by tabs in the tmux status bar, at the bottom. To switch from one window to another, you can use some keystrokes or even your mouse. More on that below.
+
+#### Panes
+You can split your windows in panes to have multiple shell on one screen. It’s really practical, I love it.
+
+### General usage
+
+- Managing tmux Sessions
+  - `tmux list-sessions` - List tmux sessions
+  - `tmux new-session -s hello` - Create a new session named “hello”
+  - `tmux kill-session -t hello` - Kill the session named “hello”
+  - `tmux kill-server` - Kill the tmux server and, as a result, every session
+
+### Shortcuts
+```
+alias tml="tmux list-sessions"
+alias tmn="tmux new-session -s"
+alias tmk="tmux kill-session -t"
+alias tms="tmux switch-client -t"
+alias tma="tmux attach-session"
+alias tmd="tmux detach"
+alias tmkall="tmux kill-server"
+```
+#### Create new pane
+```
+Cntrl-Space v -> split vertically
+Cntrl-Space h -> split horizontally
+```
+#### Move from pane to pane
+```
+Cntrl-h -> Left
+Cntrl-j -> Down
+Cntrl-k -> Up
+Cntrl-l -> Right
+```
+#### Windows
+```
+Cntrl-Space + n -> Rename window
+Cntrl-Space + w -> Create new
+```
+#### Move window to window
+```
+Cntrl-u -> Prev window
+Cntrl-U -> Next window
+```
+#### Choose tree
+```
+Cntrl-t
+```
+#### Clock
+```
+Cntrl-Space + t
+```
+
+#### Conf file
+- `tmuxconf`
+
+## NVIM
+
+- [Configuration here](https://github.com/cjairm/nvim)
+
+#### Conf file
+- `nvimconf`
+
+## Commands browser
+
+## Keyboard - Terminal
+```
+Cntrl-Raise + s -> Move word by word backward
+Cntrl-Raise + f -> Move word by word forward
+```
