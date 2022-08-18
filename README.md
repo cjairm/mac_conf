@@ -43,6 +43,14 @@ brew install koekeishiya/formulae/skhd
 touch ~/.config/yabai/yabairc
 chmod +x ~/.config/yabai/yabairc
 ```
-- Check configuration of file here
+- [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/yabairc)
+
+## skhd
+- Where to put the config file?
+```
+touch ~/.config/skhd/skhdrc
+chmod +x ~/.config/skhd/skhdrc
+```
+- [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/yabairc)
 
 ## Tmux
