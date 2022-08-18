@@ -28,4 +28,21 @@ Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We 
 3. [Powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 
 ## Yabai
+
+### Installation
+- [MacOS window manager](https://github.com/koekeishiya/yabai)
+```
+brew install koekeishiya/formulae/yabai
+```
+- [Simple hotkey daemon for macOS](https://github.com/koekeishiya/skhd)
+```
+brew install koekeishiya/formulae/skhd
+```
+- Where to put the config file?
+```
+touch ~/.config/yabai/yabairc
+chmod +x ~/.config/yabai/yabairc
+```
+- Check configuration of file here
+
 ## Tmux
