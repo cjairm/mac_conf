@@ -51,6 +51,6 @@ chmod +x ~/.config/yabai/yabairc
 touch ~/.config/skhd/skhdrc
 chmod +x ~/.config/skhd/skhdrc
 ```
-- [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/yabairc)
+- [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/skhdrc)
 
 ## Tmux
