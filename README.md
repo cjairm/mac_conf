@@ -262,3 +262,5 @@ Command + w -> Close tab
 Cntrl-Raise + s -> Move word by word backward
 Cntrl-Raise + f -> Move word by word forward
 ```
+## Widgets
+<img width="358" alt="Screen Shot 2022-08-21 at 2 52 16 AM" src="https://user-images.githubusercontent.com/33442330/185781373-a50c50b0-9aeb-4cbc-aa27-98a2f032a017.png">
