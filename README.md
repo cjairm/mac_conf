@@ -32,6 +32,11 @@ Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We 
 2. [Spaceship ZSH](https://github.com/spaceship-prompt/spaceship-prompt)
 3. [Powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 
+## Ripgrep
+
+### Installation
+- [Official docs](https://github.com/BurntSushi/ripgrep)
+
 ## Yabai
 
 ### Installation
