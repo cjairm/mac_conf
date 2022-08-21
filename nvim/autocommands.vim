@@ -19,14 +19,14 @@ nmap <Leader>h :bp<CR>
 "Space + i => Prettier
 nmap <Leader>i <Plug>(Prettier)
 
-"Space + r => relative path
+"Space + r => copy relative path
 map <Leader>r :let @+ = expand("%")<CR>
 
-"Space + t => full path
+"Space + t => copy full path
 map <Leader>t :let @+ = expand("%:p")<CR>
 
-"Space + h => clear search
-map <leader>h :noh<CR>
+"Space + y => clear search
+map <leader>y :noh<CR>
 
 "Fuzzy find
 nnoremap <C-p> :FZF<CR>
@@ -35,5 +35,8 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
