@@ -208,7 +208,7 @@ ln -s ~/.config/nvim/.nvimrc .vimrc
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-- [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/yabairc)
+- [Check configuration file here](https://github.com/cjairm/mac_conf/tree/main/nvim)
 
 #### Conf file
 - `nvimconf`
