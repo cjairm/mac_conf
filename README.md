@@ -173,10 +173,14 @@ Cntrl-l -> Right
 Cntrl-Space + n -> Rename window
 Cntrl-Space + w -> Create new
 ```
+#### Copy mode
+```
+Cntrl-Space + [
+```
 #### Move window to window
 ```
 Cntrl-u -> Prev window
-Cntrl-U -> Next window
+Cntrl-o -> Next window
 ```
 #### Choose tree
 ```
