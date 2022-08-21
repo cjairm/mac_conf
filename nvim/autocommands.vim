@@ -1,29 +1,14 @@
 ""For IDE - easymotion
 let mapleader=" "                  
 
-"Space + s
-nmap <Leader>s <Plug>(easymotion-s2)                    
+"Space + s => search for letter
+nmap s <Plug>(easymotion-overwin-f2)
 
 "Space + m => to open menu 
 nmap <Leader>m :NERDTreeFind<CR>
 
-"Space + w => to save
-nmap <Leader>w :w<CR>
-
-"Space + q => to quit
-nmap <Leader>q :q<CR>
-
 "Space + e => to Navigate into files
 nmap <Leader>e :e. <CR>
-
-"Space + tc => Create new tab
-nmap <Leader>tc :tabe<CR>
-
-"Space + tn => Go Next Tab
-nmap <Leader>tn :tabn<CR>
-
-"Space + tp => Go Prev Tab
-nmap <Leader>tp :tabp<CR>
 
 "Space + l => Go Next Buffer
 nmap <Leader>l :bn<CR>
@@ -33,6 +18,15 @@ nmap <Leader>h :bp<CR>
 
 "Space + i => Prettier
 nmap <Leader>i <Plug>(Prettier)
+
+"Space + r => relative path
+map <Leader>r :let @+ = expand("%")<CR>
+
+"Space + t => full path
+map <Leader>t :let @+ = expand("%:p")<CR>
+
+"Space + h => clear search
+map <leader>h :noh<CR>
 
 "Fuzzy find
 nnoremap <C-p> :FZF<CR>
