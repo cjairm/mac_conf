@@ -180,7 +180,35 @@ Cntrl-Space + t
 
 ## NVIM
 
-- [Configuration here](https://github.com/cjairm/nvim)
+### Installation
+- [Official documentation](https://neovim.io/) and/or [here](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
+```
+brew install neovim
+```
+- Where do I put conf file?
+Make sure this file exist, if not create it. This file will allow us to share configuration with Vim and Nvim
+```
+touch ~/.config/nvim/init.vim
+chmod +x ~/.config/nvim/init.vim
+
+# Inside of file
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+```
+- Then we need to create the file where will save the configuration.
+```
+touch ~/.config/nvim/.nvimrc
+chmod +x ~/.config/nvim/.nvimrc
+
+ln -s ~/.config/nvim/.nvimrc .vimrc
+```
+- [Plugin](https://github.com/junegunn/vim-plug)
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+- [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/yabairc)
 
 #### Conf file
 - `nvimconf`
