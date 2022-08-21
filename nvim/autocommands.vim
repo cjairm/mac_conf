@@ -37,6 +37,3 @@ let g:fzf_action = {
   \}
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-
-
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
