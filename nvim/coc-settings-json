@@ -1,0 +1,16 @@
+{
+	"javascript.suggestionActions.enabled": false,
+	"typescript.suggestionActions.enabled": false,
+	"languageserver": {
+		"dockerfile": {
+			"command": "docker-langserver",
+			"filetypes": ["dockerfile"],
+			"args": ["--stdio"]
+		},
+		"sql": {
+			"command": "sql-language-server",
+			"args": ["up", "--method", "stdio"],
+			"filetypes": ["sql", "mysql"]
+		}
+	}
+}
