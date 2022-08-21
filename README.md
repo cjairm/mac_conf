@@ -6,6 +6,8 @@
 ## Install iTerm2
 Replace the default Terminal.app in macOS by [iTerm2](https://iterm2.com/).
 
+<img width="783" alt="Screen Shot 2022-08-21 at 1 18 43 AM" src="https://user-images.githubusercontent.com/33442330/185778315-d562c8a7-db16-4f0e-9cce-3428f4327482.png">
+
 ## ZSH and Oh My ZSH
 Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We can enrich ZSH by using the [Oh My ZSH](https://ohmyz.sh/) framework which provides some functionality that will boost our productivity.
 
@@ -83,6 +85,11 @@ brew services start skhd
 
 #### Conf file
 - `skhdrcconf`
+
+## Mission control
+<img width="403" alt="Screen Shot 2022-08-21 at 1 27 44 AM" src="https://user-images.githubusercontent.com/33442330/185778602-dbab1f1f-8e89-4127-acba-8fdef22239e3.png">
+<img width="404" alt="Screen Shot 2022-08-21 at 1 27 58 AM" src="https://user-images.githubusercontent.com/33442330/185778603-16b14e47-7523-4d59-9783-7a23255da2e3.png">
+
 
 ## Tmux
 
@@ -209,6 +216,26 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 - [Check configuration file here](https://github.com/cjairm/mac_conf/tree/main/nvim)
+- Note. After the configuration make sure you run
+```
+:PlugInstall
+```
+#### Minimap
+- [Docs](https://github.com/yavko/minimap.nvim)
+You can install code-minimap with Homebrew:
+```
+brew install code-minimap
+```
+#### Coc
+```
+:h coc-completion
+:h coc-completion-example
+```
+#### Font
+[All](https://github.com/ryanoasis/nerd-fonts#patched-fonts)
+  - [Hack nerd font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#macos)
+
+<img width="946" alt="Screen Shot 2022-08-21 at 1 14 50 AM" src="https://user-images.githubusercontent.com/33442330/185778221-adabf65b-400a-41bd-8414-ce1dddbd9da6.png">
 
 #### Conf file
 - `nvimconf`
