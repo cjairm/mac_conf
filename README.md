@@ -241,6 +241,12 @@ brew install code-minimap
 - `nvimconf`
 
 ## Commands browser
+```
+Command-Shift + [ -> Move to tab backward
+Command-Shift + ] -> Move to tab forward
+Command + t -> Create tab
+Command + w -> Close tab
+```
 
 ## Keyboard - Terminal
 ```
