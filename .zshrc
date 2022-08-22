@@ -142,5 +142,13 @@ alias nvimconf="nvim ~/.vimrc"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.config/tmux/.tmux.zsh ] && source ~/.config/tmux/.tmux.zsh
+# Tmux alias
+# alias tml="tmux list-sessions"
+# alias tmn="tmux new-session -s"
+# alias tmk="tmux kill-session -t"
+# alias tms="tmux switch-client -t"
+# alias tma="tmux attach-session"
+# alias tmd="tmux detach"
+# alias tmkall="tmux kill-server"
 
 [ -f ~/.config/docker/.docker.zsh ] && source ~/.config/docker/.docker.zsh
