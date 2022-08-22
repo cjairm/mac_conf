@@ -250,6 +250,20 @@ brew install code-minimap
 
 <img width="946" alt="Screen Shot 2022-08-21 at 1 14 50 AM" src="https://user-images.githubusercontent.com/33442330/185778221-adabf65b-400a-41bd-8414-ce1dddbd9da6.png">
 
+#### Notes
+```
+npm install -g neovim
+```
+
+- ADVICE:
+  - (tmux 1.9+ only) Set `focus-events` in ~/.tmux.conf:
+      set-option -g focus-events on
+      
+- If needed you may have to go to .config/coc/extension
+```
+npm i
+```
+      
 #### Conf file
 - `nvimconf`
 
