@@ -144,7 +144,8 @@ alias nvimconf="nvim ~/.vimrc"
 [ -f ~/.config/tmux/.tmux.zsh ] && source ~/.config/tmux/.tmux.zsh
 # Tmux alias
 # alias tml="tmux list-sessions"
-# alias tmn="tmux detach && tmux new-session -s"
+# alias tmn="tmux new-session -s"
+# alias tmdn="tmux detach && tmux new-session -s"
 # alias tmk="tmux kill-session -t"
 # alias tms="tmux switch-client -t"
 # alias tma="tmux attach-session"
