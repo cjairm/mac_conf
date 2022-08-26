@@ -229,6 +229,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 :PlugInstall
 ```
+- To enable prettier use [this link](https://github.com/neoclide/coc-prettier)
 #### Minimap
 - [Docs](https://github.com/yavko/minimap.nvim)
 You can install code-minimap with Homebrew:
