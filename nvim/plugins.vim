@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'easymotion/vim-easymotion'
 	Plug 'christoomey/vim-tmux-navigator'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'prettier/vim-prettier', { 'do': 'npm install' }	
 	Plug 'dense-analysis/ale'
 	Plug 'preservim/nerdcommenter'
 
