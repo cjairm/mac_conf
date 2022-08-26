@@ -17,7 +17,7 @@ nmap <Leader>l :bn<CR>
 nmap <Leader>h :bp<CR>
 
 "Space + i => Prettier
-nmap <Leader>i <Plug>(Prettier)
+map <Leader>i :CocCommand prettier.forceFormatDocument<CR>
 
 "Space + r => copy relative path
 map <Leader>r :let @+ = expand("%")<CR>
