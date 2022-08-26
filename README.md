@@ -155,6 +155,8 @@ alias tms="tmux switch-client -t"
 alias tma="tmux attach-session"
 alias tmd="tmux detach"
 alias tmkall="tmux kill-server"
+
+alias tmToFolder="tmn myFolder -c ~/myFolder"
 ```
 #### Create new pane
 ```
