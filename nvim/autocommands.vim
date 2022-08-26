@@ -28,6 +28,9 @@ map <Leader>t :let @+ = expand("%:p")<CR>
 "Space + y => clear search
 map <leader>y :noh<CR>
 
+"Space + q => close buffer
+map <leader>q :bd<CR>
+
 "Fuzzy find
 nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
