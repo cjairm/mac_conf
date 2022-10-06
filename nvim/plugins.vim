@@ -9,6 +9,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'dense-analysis/ale'
 	Plug 'preservim/nerdcommenter'
+  
+	"Git
+	Plug 'tpope/vim-fugitive'
 
 	"File Explorer
 	Plug 'scrooloose/nerdtree'
