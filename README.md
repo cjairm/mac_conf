@@ -1,5 +1,8 @@
 # Productivity Configuration for Mac
 
+## Install Raycast
+Replace spotlight with [Raycast](https://www.raycast.com/).
+
 ## Install Homebrew
 [Homebrew](https://brew.sh/) is the missing package manager for macOS (or Linux) and makes installing packages super easy.
 
