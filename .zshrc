@@ -136,6 +136,9 @@ alias skhdrcconf="nvim ~/.config/skhd/skhdrc"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias nvimconf="nvim ~/.vimrc"
 
+# make zips 
+# git archive --format=zip HEAD -o <file_name>.zip
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
