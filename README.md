@@ -239,6 +239,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 - To enable prettier use [this link](https://github.com/neoclide/coc-prettier)
 - If problems with FZF check [this](https://www.npmjs.com/package/coc-fzf-preview)
+- To configure with git
+```
+git config --global core.editor "vim"
+```
 #### Minimap
 - [Docs](https://github.com/yavko/minimap.nvim)
 You can install code-minimap with Homebrew:
