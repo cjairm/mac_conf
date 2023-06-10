@@ -69,6 +69,9 @@ chmod +x ~/.config/skhd/skhdrc
 ```
 - [Check configuration file here](https://github.com/cjairm/mac_conf/blob/main/skhdrc)
 
+### some extra help if needed
+https://www.youtube.com/watch?v=k94qImbFKWE
+
 ### Additional Mac System Settings
 
 - Navigate to `System Preferences > Accessibility > Display` and make sure "Reduce Motion" is `selected`.
