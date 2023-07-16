@@ -5,10 +5,6 @@
 ```
 brew install koekeishiya/formulae/yabai
 ```
-- [Simple hotkey daemon for macOS](https://github.com/koekeishiya/skhd)
-```
-brew install koekeishiya/formulae/skhd
-```
 - Where to put the config file?
 ```
 touch ~/.config/yabai/yabairc
