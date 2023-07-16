@@ -1,3 +1,15 @@
+## [Installation](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+
+Homebrew on macOS or Linux:
+```
+brew install neovim
+```
+
+To update the development version of Nvim:
+```
+brew upgrade neovim --fetch-HEAD
+```
+
 ## Requirements to install [LazyVim](https://www.lazyvim.org/)
 
 - Neovim >= 0.8.0 (needs to be built with LuaJIT)
@@ -14,19 +26,7 @@
   - alacritty (Linux, Macos & Windows)
   - iterm2 (Macos)
  
-## [Installation](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-
-Homebrew on macOS or Linux:
-```
-brew install neovim
-```
-
-To update the development version of Nvim:
-```
-brew upgrade neovim --fetch-HEAD
-```
-
-#### Font
+### Font
 [All](https://github.com/ryanoasis/nerd-fonts#patched-fonts) - [official site](https://www.nerdfonts.com/)
   - [Hack nerd font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#macos)
   
@@ -36,6 +36,49 @@ cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complet
 
 <img width="946" alt="Screen Shot 2022-08-21 at 1 14 50 AM" src="https://user-images.githubusercontent.com/33442330/185778221-adabf65b-400a-41bd-8414-ce1dddbd9da6.png">
 
+### Extra modules
+```
+{ import = "lazyvim.plugins.extras.formatting.prettier" },
+{ import = "lazyvim.plugins.extras.lang.typescript" },
+{ import = "lazyvim.plugins.extras.lang.json" },
+{ import = "lazyvim.plugins.extras.lang.go" },
+{ import = "lazyvim.plugins.extras.lang.python" },
+{ import = "lazyvim.plugins.extras.lang.rust" },
+{ import = "lazyvim.plugins.extras.linting.eslint" },
+```
+
+### under /plugins add gruvbox.lua
+```
+return {
+  { "ellisonleao/gruvbox.nvim" },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
+}
+
+```
+
+### Relevant commands
+```
+# search
+s -> Then type the word you are looking for
+<space> -> s -> g/G -> Searches keywords in folder
+
+# others
+<space> -> x -> x -> to see errors
+<space> -> g -> g/s -> git
+
+# buffers
+H -> moves buffer to the left
+L -> moves buffer to the right
+<space>, -> opens buffer list
+<space>bd -> deletes the buffer
+<space>bp -> pins the buffer
+<space>bP -> deletes the pinned the buffer
+```
 ---
 
 ### Legacy
