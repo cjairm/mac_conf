@@ -18,3 +18,10 @@ chmod +x ~/.config/yabai/yabairc
 
 #### Conf file
 - `yabaiconf`
+
+```
+--------------------------------------
+# Will automatically start Yabai when computer starts
+brew services start yabai
+--------------------------------------
+```
