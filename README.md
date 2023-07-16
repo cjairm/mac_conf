@@ -104,6 +104,7 @@ brew services start skhd
 ## Useful aliases
 ```
 alias nvim_sf="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+alias call="tmux clear-history"
 ```
 
 ## Commands browser
