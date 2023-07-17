@@ -46,8 +46,16 @@ cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complet
 { import = "lazyvim.plugins.extras.lang.rust" },
 { import = "lazyvim.plugins.extras.linting.eslint" },
 ```
+### inside `/autocmds.lua`
+```
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.cmd.Neotree("close")
+  end,
+})
+```
 
-### under /plugins add gruvbox.lua
+### under `/plugins` add `gruvbox.lua`
 ```
 return {
   { "ellisonleao/gruvbox.nvim" },
