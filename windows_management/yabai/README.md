@@ -19,5 +19,7 @@ chmod +x ~/.config/yabai/yabairc
 --------------------------------------
 # Will automatically start Yabai when computer starts
 brew services start yabai
+## for M(n)
+yabai --restart-service
 --------------------------------------
 ```
