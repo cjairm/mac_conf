@@ -43,6 +43,9 @@ Since macOS Catalina (10.15.2) the default shell is now ZSH instead of Bash. We 
 ## Useful aliases
 ```
 alias nvim_sf="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+# needs
+# - brew install fd
+# - brew install fzf
 alias call="tmux clear-history"
 ```
 
