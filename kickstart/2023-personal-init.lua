@@ -321,10 +321,15 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 
 -- Git
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' });
+vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
 
--- Have 2 spaces for indentation
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
+
+vim.keymap.set('n', '<leader>p', ':PrettierAsync<CR>', { desc = 'Prettier JS and TS' })
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
