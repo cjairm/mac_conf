@@ -86,7 +86,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -110,7 +110,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -128,16 +128,16 @@ require('lazy').setup({
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
-        vim.keymap.set({'n', 'v'}, ']c', function()
+        vim.keymap.set({ 'n', 'v' }, ']c', function()
           if vim.wo.diff then return ']c' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
-        vim.keymap.set({'n', 'v'}, '[c', function()
+        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        vim.keymap.set({ 'n', 'v' }, '[c', function()
           if vim.wo.diff then return '[c' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
+        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
       end,
     },
   },
@@ -203,7 +203,6 @@ require('lazy').setup({
     'prettier/vim-prettier',
     run = 'yarn install --frozen-lockfile --production',
   },
-
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -322,7 +321,10 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 
 -- Git
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' });
--- vim.keymap.set('n', '<leader>gb', { run = ':Git blame', desc = '[G]it [B]lame' });
+
+-- Have 2 spaces for indentation
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
