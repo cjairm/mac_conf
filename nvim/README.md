@@ -1,4 +1,39 @@
-## [Installation](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+### Remove existent conf
+```
+rm -rf ~/.local/share/nvim/lazy && rm -rf ~/.config/nvim
+```
+
+#### [kickstart.nvim docs](https://github.com/nvim-lua/kickstart.nvim)
+#### [nvim lua](https://neovim.io/doc/user/lua-guide.html)
+
+## Start installation 
+```
+mkdir -p ~/.config/nvim && cd ~/.config/nvim && nvim init.lua
+```
+
+#### Copy the content of
+- https://raw.githubusercontent.com/nvim-lua/kickstart.nvim/master/init.lua
+- (or - default copied) https://raw.githubusercontent.com/cjairm/mac_conf/main/kickstart/2023-default-init.lua
+- (or - personal) https://raw.githubusercontent.com/cjairm/mac_conf/main/kickstart/2023-personal-init.lua
+
+### some commands
+```
+<Leader>sf -> Search File
+gr -> Search references
+<Leader>ds -> Search Symbols inside file
+<Leader><space> -> Buffers
+<Leader>? -> Recent files
+
+:Telescope keymaps
+:Telescope help_tags
+:Mason (C-f)
+
+:help lualine.txt
+```
+
+---
+
+## (Legacy) [Installation](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 Homebrew on macOS or Linux:
 ```
