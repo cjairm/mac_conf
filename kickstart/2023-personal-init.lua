@@ -199,6 +199,12 @@ require('lazy').setup({
     },
   },
 
+  {
+    'prettier/vim-prettier',
+    run = 'yarn install --frozen-lockfile --production',
+  },
+
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -313,6 +319,10 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
+
+-- Git
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' });
+-- vim.keymap.set('n', '<leader>gb', { run = ':Git blame', desc = '[G]it [B]lame' });
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
