@@ -331,7 +331,7 @@ vim.keymap.set('n', '<leader>p', function()
   else
     vim.cmd('Format')
   end
-end, { desc = 'Prettier JS and TS' })
+end, { desc = '[P]rettier' })
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
