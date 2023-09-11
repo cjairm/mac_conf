@@ -325,7 +325,13 @@ vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
 
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
 
-vim.keymap.set('n', '<leader>p', ':PrettierAsync<CR>', { desc = 'Prettier JS and TS' })
+vim.keymap.set('n', '<leader>p', function()
+  if vim.bo.filetype == 'typescript' or vim.bo.filetype == 'javascript' then
+    vim.cmd('PrettierAsync')
+  else
+    vim.cmd('Format')
+  end
+end, { desc = 'Prettier JS and TS' })
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
