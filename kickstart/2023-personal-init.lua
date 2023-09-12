@@ -266,10 +266,6 @@ vim.o.termguicolors = true
 -- replace tabs with spaces
 vim.opt.expandtab = true
 
--- 1 tab = 2 spaces
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-
 -- when creating a new line, copy the indentation from the line above
 vim.opt.autoindent = true
 vim.opt.numberwidth = 1
