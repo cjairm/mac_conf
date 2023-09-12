@@ -263,6 +263,20 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- replace tabs with spaces
+vim.opt.expandtab = true
+
+-- 1 tab = 2 spaces
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+
+-- when creating a new line, copy the indentation from the line above
+vim.opt.autoindent = true
+vim.opt.numberwidth = 1
+
+vim.opt.cc = '80'
+vim.opt.ruler = true
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -323,8 +337,7 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' });
 vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
 
-vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
-
+-- Prettier
 vim.keymap.set('n', '<leader>p', function()
   if vim.bo.filetype == 'typescript' or vim.bo.filetype == 'javascript' then
     vim.cmd('PrettierAsync')
@@ -333,9 +346,10 @@ vim.keymap.set('n', '<leader>p', function()
   end
 end, { desc = '[P]rettier' })
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-
+-- Random
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>cpr', ':let @+ = expand("%")<CR>', { desc = '[C]opy [P]ath [R]elative' })
+vim.keymap.set('n', '<leader>cpa', ':let @+ = expand("%:p")<CR>', { desc = '[C]opy [P]ath [A]bsolute' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
