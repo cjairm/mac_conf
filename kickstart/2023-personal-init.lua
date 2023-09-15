@@ -204,6 +204,8 @@ require('lazy').setup({
     run = 'yarn install --frozen-lockfile --production',
   },
 
+  { 'preservim/nerdtree' }
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -341,6 +343,9 @@ vim.keymap.set('n', '<leader>p', function()
     vim.cmd('Format')
   end
 end, { desc = '[P]rettier' })
+
+-- NERDTree
+vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T]oggle' })
 
 -- Random
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
@@ -563,3 +568,4 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
