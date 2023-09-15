@@ -30,7 +30,7 @@ gr -> Search references
 
 :help lualine.txt
 ```
-### some neededs
+### extra
 For Astro LSP - https://www.reddit.com/r/neovim/comments/10boyvz/lazyvim_no_lsp_for_astro_but_astrolanguageserver/
 ```
 :TSInstall astro
