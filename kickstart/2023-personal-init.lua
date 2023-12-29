@@ -309,6 +309,9 @@ vim.opt.ruler = true
 
 vim.g.NERDTreeQuitOnOpen = 1
 
+-- Enable relative number
+vim.o.relativenumber = true
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
