@@ -87,6 +87,9 @@ require('lazy').setup({
   -- Custom ***
   'kchmck/vim-coffee-script',
 
+  -- Custom ***
+  'christoomey/vim-tmux-navigator',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -341,6 +344,8 @@ vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>cpr', ':let @+ = expand("%")<CR>', { desc = '[C]opy [P]ath [R]elative' })
 vim.keymap.set('n', '<leader>cpa', ':let @+ = expand("%:p")<CR>', { desc = '[C]opy [P]ath [A]bsolute' })
+vim.keymap.set('n', '<leader>v', ':vertical new<CR>', { desc = 'Creates [V]ertical window' })
+vim.keymap.set('n', '<leader>-', ':horizontal new<CR>', { desc = 'Creates [H]orizontal window' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
