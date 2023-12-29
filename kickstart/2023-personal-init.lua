@@ -165,16 +165,13 @@ require('lazy').setup({
     },
   },
 
-  -- Custom ***
   {
-    -- Theme
-    { 'ellisonleao/gruvbox.nvim' },
-    {
-      'LazyVim/LazyVim',
-      opts = {
-        colorscheme = 'gruvbox',
-      },
-    },
+    -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'onedark'
+    end,
   },
 
   {
@@ -184,7 +181,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
