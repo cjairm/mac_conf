@@ -204,7 +204,9 @@ require('lazy').setup({
     run = 'yarn install --frozen-lockfile --production',
   },
 
-  { 'preservim/nerdtree' }
+  { 'preservim/nerdtree' },
+
+  { 'kchmck/vim-coffee-script' },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -337,11 +339,8 @@ vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
 
 -- Prettier
 vim.keymap.set('n', '<leader>p', function()
-  if vim.bo.filetype == 'typescript' or
-    vim.bo.filetype == 'javascript' or
-    vim.bo.filetype == 'typescriptreact' or
-    vim.bo.filetype == 'javascriptreact' then
-      vim.cmd('PrettierAsync')
+  if vim.bo.filetype == 'typescript' or vim.bo.filetype == 'javascript' then
+    vim.cmd('PrettierAsync')
   else
     vim.cmd('Format')
   end
@@ -354,6 +353,8 @@ vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>cpr', ':let @+ = expand("%")<CR>', { desc = '[C]opy [P]ath [R]elative' })
 vim.keymap.set('n', '<leader>cpa', ':let @+ = expand("%:p")<CR>', { desc = '[C]opy [P]ath [A]bsolute' })
+
+require('lspconfig').astro.setup{}
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
