@@ -1,6 +1,6 @@
 ### Remove existent conf
 ```
-rm -rf ~/.local/share/nvim/lazy && rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim/lazy && rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim/
 ```
 
 #### [kickstart.nvim docs](https://github.com/nvim-lua/kickstart.nvim)
