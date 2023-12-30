@@ -90,6 +90,9 @@ require('lazy').setup({
   -- Custom ***
   'christoomey/vim-tmux-navigator',
 
+  -- Custom ***
+  'ellisonleao/gruvbox.nvim',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -165,29 +168,6 @@ require('lazy').setup({
           return '<Ignore>'
         end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
       end,
-    },
-  },
-
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
     },
   },
 
@@ -331,6 +311,11 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Custom ***
+-- [[ Theme ]]
+vim.o.background = 'dark' -- or "light" for light mode
+vim.cmd [[colorscheme gruvbox]]
+
+-- Custom ***
 -- [[ Git ]]
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
 vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
@@ -344,8 +329,9 @@ vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>cpr', ':let @+ = expand("%")<CR>', { desc = '[C]opy [P]ath [R]elative' })
 vim.keymap.set('n', '<leader>cpa', ':let @+ = expand("%:p")<CR>', { desc = '[C]opy [P]ath [A]bsolute' })
-vim.keymap.set('n', '<leader>v', ':vertical new<CR>', { desc = 'Creates [V]ertical window' })
-vim.keymap.set('n', '<leader>-', ':horizontal new<CR>', { desc = 'Creates [H]orizontal window' })
+-- windows
+vim.keymap.set('n', '<leader>wv', ':wincmd v<CR>', { desc = 'Creates [W]indow [V]ertical' })
+vim.keymap.set('n', '<leader>wr', ':wincmd r<CR>', { desc = '[W]indow [R]otates' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
