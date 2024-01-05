@@ -237,6 +237,15 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>p', vim.lsp.buf.format, {})
     end,
   },
+
+  -- Custom ***
+  {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 }, {})
 
 -- [[ Setting options ]]
@@ -323,6 +332,9 @@ vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
 -- Custom ***
 -- [[ NERDTree ]]
 vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T]oggle' })
+
+-- [[ NERDTree ]]
+vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'open [G]it window' })
 
 -- Custom ***
 -- [[ Random ]]
