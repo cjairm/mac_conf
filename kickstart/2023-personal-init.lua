@@ -328,13 +328,11 @@ vim.cmd [[colorscheme gruvbox]]
 -- [[ Git ]]
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
 vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
+vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'open [G]it window' })
 
 -- Custom ***
 -- [[ NERDTree ]]
 vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T]oggle' })
-
--- [[ NERDTree ]]
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'open [G]it window' })
 
 -- Custom ***
 -- [[ Random ]]
