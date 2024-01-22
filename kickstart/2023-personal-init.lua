@@ -234,16 +234,18 @@ require('lazy').setup({
         },
       }
 
-      vim.keymap.set('n', '<leader>p', vim.lsp.buf.format, {})
+      vim.keymap.set('n', '<leader>p', function()
+        vim.lsp.buf.format { timeout_ms = 2000 }
+      end, {})
     end,
   },
 
   -- Custom ***
   {
-    "kdheepak/lazygit.nvim",
+    'kdheepak/lazygit.nvim',
     -- optional for floating window border decoration
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      'nvim-lua/plenary.nvim',
     },
   },
 }, {})
