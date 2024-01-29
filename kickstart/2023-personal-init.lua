@@ -106,7 +106,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -131,7 +131,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -196,6 +196,8 @@ require('lazy').setup({
         map('n', '<leader>hD', function()
           gs.diffthis '~'
         end, { desc = 'git diff against last commit' })
+        -- Custom ***
+        map('n', '<leader>hg', ':LazyGit<CR>', { desc = 'git window' })
 
         -- Toggles
         map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = 'toggle git blame line' })
@@ -385,12 +387,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- [[ Theme ]]
 vim.o.background = 'dark' -- or "light" for light mode
 vim.cmd [[colorscheme gruvbox]]
-
--- Custom ***
--- [[ Git ]]
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
-vim.keymap.set('n', '<leader>gb', ':G blame<CR>', { desc = '[G]it [B]lame' })
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'open [G]it window' })
 
 -- Custom ***
 -- [[ NERDTree ]]
@@ -617,10 +613,12 @@ end
 
 -- document existing key chains
 require('which-key').register {
+  ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
   ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
   ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
   ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+  ['<leader>n'] = { name = '[N]erd Tree', _ = 'which_key_ignore' },
+  ['<leader>p'] = { name = '[P]rettier', _ = 'which_key_ignore' },
   ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
   ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
   ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
