@@ -278,12 +278,24 @@ require('lazy').setup({
 
       null_ls.setup {
         sources = {
+          -- Lua
           null_ls.builtins.formatting.stylua,
+          -- TS, JS, HTML, CSS
           null_ls.builtins.formatting.prettier,
+          -- Golang
           null_ls.builtins.formatting.goimports,
+          -- Bash
+          null_ls.builtins.formatting.shfmt,
+          -- Python
+          null_ls.builtins.formatting.black,
+          null_ls.builtins.formatting.isort,
 
+          -- TS, JS, HTML, CSS
           null_ls.builtins.diagnostics.eslint_d,
+          -- Golang
           null_ls.builtins.diagnostics.golangci_lint,
+          -- Python
+          null_ls.builtins.diagnostics.flake8,
         },
       }
 
