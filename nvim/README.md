@@ -31,7 +31,7 @@ gr -> Search references
 :help lualine.txt
 ```
 ### extra
-![Screenshot 2023-12-29 at 5 30 41 PM](https://github.com/cjairm/mac_conf/assets/33442330/0b1b5402-99a1-4093-ac4f-0e99c8b67b92)
+![Screenshot 2024-01-31 at 2 27 06 PM](https://github.com/cjairm/mac_conf/assets/33442330/8d2d61da-89af-4422-a5cb-e71de0984430)
 
 ---
 
