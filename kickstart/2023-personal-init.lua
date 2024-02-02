@@ -106,7 +106,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -131,7 +131,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -276,12 +276,38 @@ require('lazy').setup({
     config = function()
       local null_ls = require 'null-ls'
 
+      local root_has_file = function(files)
+        return function(utils)
+          return utils.root_has_file(files)
+        end
+      end
+
+      local eslint_root_files = { '.eslintrc', '.eslintrc.js', '.eslintrc.json' }
+      local prettier_root_files = { '.prettierrc', '.prettierrc.js', '.prettierrc.json', 'prettier.config.js' }
+
+      local opts = {
+        eslint_formatting = {
+          condition = function(utils)
+            local has_eslint = root_has_file(eslint_root_files)(utils)
+            local has_prettier = root_has_file(prettier_root_files)(utils)
+            return has_eslint and not has_prettier
+          end,
+        },
+        eslint_diagnostics = {
+          condition = root_has_file(eslint_root_files),
+        },
+        prettier_formatting = {
+          condition = root_has_file(prettier_root_files),
+        },
+      }
+
       null_ls.setup {
         sources = {
           -- Lua
           null_ls.builtins.formatting.stylua,
           -- TS, JS, HTML, CSS
-          null_ls.builtins.formatting.prettier,
+          null_ls.builtins.formatting.eslint_d.with(opts.eslint_formatting),
+          null_ls.builtins.formatting.prettier.with(opts.prettier_formatting),
           -- Golang
           null_ls.builtins.formatting.goimports,
           -- Bash
@@ -291,11 +317,14 @@ require('lazy').setup({
           null_ls.builtins.formatting.isort,
 
           -- TS, JS, HTML, CSS
-          null_ls.builtins.diagnostics.eslint_d,
+          null_ls.builtins.diagnostics.eslint_d.with(opts.eslint_diagnostics),
           -- Golang
           null_ls.builtins.diagnostics.golangci_lint,
           -- Python
           null_ls.builtins.diagnostics.flake8,
+
+          -- TS, JS, HTML, CSS
+          null_ls.builtins.code_actions.eslint_d.with(opts.eslint_diagnostics),
         },
       }
 
