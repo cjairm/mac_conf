@@ -561,7 +561,10 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- Custom ***
+        arduino_language_server = {},
         black = {},
+        codespell = {},
+        clangd = {},
         eslint = {
           settings = {
             eslint = {
@@ -921,6 +924,9 @@ require('lazy').setup({
 
           -- Golang
           null_ls.builtins.diagnostics.golangci_lint,
+
+          -- Spell checker
+          null_ls.builtins.completion.spell,
         },
       }
 
@@ -977,4 +983,4 @@ vim.keymap.set('n', '<leader>cpa', ':let @+ = expand("%:p")<CR>', { desc = '[C]o
 -- windows
 vim.keymap.set('n', '<leader>wv', ':wincmd v<CR>', { desc = 'Creates [W]indow [V]ertical' })
 vim.keymap.set('n', '<leader>wr', ':wincmd r<CR>', { desc = '[W]indow [R]otates' })
--- ***
+-- **
