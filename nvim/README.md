@@ -11,6 +11,7 @@ rm -rf ~/.local/share/nvim/lazy && rm -rf ~/.config/nvim && rm -rf ~/.local/shar
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 brew install golangci-lint // Probably should be needed to be installed
+npm install -g eslint eslint_d // to make it work with eslint
 ```
 
 #### Copy the content of
