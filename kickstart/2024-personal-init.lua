@@ -557,7 +557,19 @@ require('lazy').setup({
       local servers = {
         -- Custom ***
         black = {},
-        eslint = {},
+        eslint = {
+          settings = {
+            eslint = {
+              enable = true,
+              enableRuleLinting = true,
+              -- You can customize the eslint options here
+              options = {
+                configFile = { '.eslintrc', '.eslintrc.js', '.eslintrc.json' },
+                ignorePatterns = { 'dist', 'node_modules' },
+              },
+            },
+          },
+        },
         eslint_d = {},
         flake8 = {},
         goimports = {},
@@ -633,26 +645,6 @@ require('lazy').setup({
         },
       }
     end,
-  },
-
-  { -- Autoformat
-    'stevearc/conform.nvim',
-    opts = {
-      notify_on_error = false,
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
-      },
-    },
   },
 
   { -- Autocompletion
