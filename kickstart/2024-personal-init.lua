@@ -983,4 +983,4 @@ vim.keymap.set('n', '<leader>cpa', ':let @+ = expand("%:p")<CR>', { desc = '[C]o
 -- windows
 vim.keymap.set('n', '<leader>wv', ':wincmd v<CR>', { desc = 'Creates [W]indow [V]ertical' })
 vim.keymap.set('n', '<leader>wr', ':wincmd r<CR>', { desc = '[W]indow [R]otates' })
--- **
+-- ***
