@@ -8,15 +8,14 @@ rm -rf ~/.local/share/nvim/lazy && rm -rf ~/.config/nvim && rm -rf ~/.local/shar
 
 ## Start installation 
 ```
-mkdir -p ~/.config/nvim && cd ~/.config/nvim && nvim init.lua
+git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 brew install golangci-lint // Probably should be needed to be installed
 ```
 
 #### Copy the content of
 - https://raw.githubusercontent.com/nvim-lua/kickstart.nvim/master/init.lua
-- (or - default copied) https://raw.githubusercontent.com/cjairm/mac_conf/main/kickstart/2023-default-init.lua
-- (or - personal) https://raw.githubusercontent.com/cjairm/mac_conf/main/kickstart/2023-personal-init.lua
+- (or - personal) https://github.com/cjairm/mac_conf/blob/main/kickstart/2024-personal-init.lua
 
 ### some commands
 ```
