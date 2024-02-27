@@ -288,7 +288,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VeryLazy', -- Sets the loading event to 'VeryLazy'
     config = function() -- This is the function that runs, AFTER loading
@@ -607,6 +607,7 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = { "eslint" },
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -839,7 +840,6 @@ require('lazy').setup({
           -- Lua
           null_ls.builtins.formatting.stylua,
           -- TS, JS, HTML, CSS
-          null_ls.builtins.formatting.eslint_d.with(opts.eslint_formatting),
           null_ls.builtins.formatting.prettier.with(opts.prettier_formatting),
           -- Golang
           null_ls.builtins.formatting.goimports,
@@ -849,15 +849,10 @@ require('lazy').setup({
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.isort,
 
-          -- TS, JS, HTML, CSS
-          null_ls.builtins.diagnostics.eslint_d.with(opts.eslint_diagnostics),
           -- Golang
           null_ls.builtins.diagnostics.golangci_lint,
           -- Python
           null_ls.builtins.diagnostics.flake8,
-
-          -- TS, JS, HTML, CSS
-          null_ls.builtins.code_actions.eslint_d.with(opts.eslint_diagnostics),
         },
       }
 
@@ -876,12 +871,6 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
--- Custom ***
--- [[ Theme ]]
-vim.o.background = 'dark' -- or "light" for light mode
-vim.cmd [[colorscheme gruvbox]]
-
 -- Custom ***
 
 -- when creating a new line, copy the indentation from the line above
@@ -895,6 +884,15 @@ vim.g.NERDTreeQuitOnOpen = 1
 
 -- Enable relative number
 vim.o.relativenumber = true
+
+-- Custom ***
+-- [[ Theme ]]
+vim.o.background = 'dark' -- or "light" for light mode
+vim.cmd [[colorscheme gruvbox]]
+
+-- Custom ***
+-- [[ NERDTree ]]
+vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T]oggle' })
 
 -- Custom ***
 -- [[ Random ]]
