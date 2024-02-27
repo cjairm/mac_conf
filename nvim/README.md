@@ -9,6 +9,8 @@ rm -rf ~/.local/share/nvim/lazy && rm -rf ~/.config/nvim && rm -rf ~/.local/shar
 ## Start installation 
 ```
 mkdir -p ~/.config/nvim && cd ~/.config/nvim && nvim init.lua
+
+brew install golangci-lint // Probably should be needed to be installed
 ```
 
 #### Copy the content of
