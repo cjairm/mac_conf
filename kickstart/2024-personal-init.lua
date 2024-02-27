@@ -83,11 +83,13 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
+
 -- Custom ***
 vim.cmd 'set expandtab'
 vim.cmd 'set tabstop=2'
 vim.cmd 'set softtabstop=2'
 vim.cmd 'set shiftwidth=2'
+-- ***
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -255,6 +257,7 @@ require('lazy').setup({
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      -- Custom ***
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
@@ -263,13 +266,13 @@ require('lazy').setup({
           opts.buffer = bufnr
           vim.keymap.set(mode, l, r, opts)
         end
-        -- Custom ***
+
         map('n', '<leader>gb', function()
           gs.blame_line { full = false }
         end, { desc = 'git blame line' })
-        -- Custom ***
         map('n', '<leader>gg', ':LazyGit<CR>', { desc = 'git window' })
-      end
+      end,
+      -- ***
     },
   },
 
@@ -288,7 +291,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  {                     -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VeryLazy', -- Sets the loading event to 'VeryLazy'
     config = function() -- This is the function that runs, AFTER loading
@@ -552,18 +555,25 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
+        -- Custom ***
+        black = {},
+        eslint = {},
+        eslint_d = {},
+        flake8 = {},
+        goimports = {},
+        gopls = {},
+        isort = {},
+        prettier = {},
+        pyright = {},
+        shfmt = {},
+        stylua = {},
+        tsserver = {},
+        -- ***
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
 
         lua_ls = {
           -- cmd = {...},
@@ -607,7 +617,6 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = { "eslint" },
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -624,6 +633,26 @@ require('lazy').setup({
         },
       }
     end,
+  },
+
+  { -- Autoformat
+    'stevearc/conform.nvim',
+    opts = {
+      notify_on_error = false,
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        -- Conform can also run multiple formatters sequentially
+        -- python = { "isort", "black" },
+        --
+        -- You can use a sub-list to tell conform to run *until* a formatter
+        -- is found.
+        -- javascript = { { "prettierd", "prettier" } },
+      },
+    },
   },
 
   { -- Autocompletion
@@ -655,7 +684,10 @@ require('lazy').setup({
       --    you can use this plugin to help you. It even has snippets
       --    for various frameworks/libraries/etc. but you will have to
       --    set up the ones that are useful for you.
-      -- 'rafamadriz/friendly-snippets',
+      --
+      --    Custom ***
+      'rafamadriz/friendly-snippets',
+      -- ***
     },
     config = function()
       -- See `:help cmp`
@@ -786,25 +818,12 @@ require('lazy').setup({
   -- Custom ***
   'preservim/nerdtree',
 
-  -- Custom ***
   'kchmck/vim-coffee-script',
 
-  -- Custom ***
   'christoomey/vim-tmux-navigator',
 
-  -- Custom ***
   'ellisonleao/gruvbox.nvim',
 
-  -- Custom ***
-  {
-    'kdheepak/lazygit.nvim',
-    -- optional for floating window border decoration
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-  },
-
-  -- Custom ***
   {
     'nvimtools/none-ls.nvim',
     config = function()
@@ -816,20 +835,9 @@ require('lazy').setup({
         end
       end
 
-      local eslint_root_files = { '.eslintrc', '.eslintrc.js', '.eslintrc.json' }
       local prettier_root_files = { '.prettierrc', '.prettierrc.js', '.prettierrc.json', 'prettier.config.js' }
 
       local opts = {
-        eslint_formatting = {
-          condition = function(utils)
-            local has_eslint = root_has_file(eslint_root_files)(utils)
-            local has_prettier = root_has_file(prettier_root_files)(utils)
-            return has_eslint and not has_prettier
-          end,
-        },
-        eslint_diagnostics = {
-          condition = root_has_file(eslint_root_files),
-        },
         prettier_formatting = {
           condition = root_has_file(prettier_root_files),
         },
@@ -851,8 +859,6 @@ require('lazy').setup({
 
           -- Golang
           null_ls.builtins.diagnostics.golangci_lint,
-          -- Python
-          null_ls.builtins.diagnostics.flake8,
         },
       }
 
@@ -861,6 +867,16 @@ require('lazy').setup({
       end, {})
     end,
   },
+
+  {
+    'kdheepak/lazygit.nvim',
+    -- optional for floating window border decoration
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
+  -- ***
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
@@ -871,8 +887,8 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
 -- Custom ***
-
 -- when creating a new line, copy the indentation from the line above
 vim.opt.autoindent = true
 vim.opt.numberwidth = 1
@@ -885,16 +901,13 @@ vim.g.NERDTreeQuitOnOpen = 1
 -- Enable relative number
 vim.o.relativenumber = true
 
--- Custom ***
 -- [[ Theme ]]
 vim.o.background = 'dark' -- or "light" for light mode
 vim.cmd [[colorscheme gruvbox]]
 
--- Custom ***
 -- [[ NERDTree ]]
 vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erdTree [T]oggle' })
 
--- Custom ***
 -- [[ Random ]]
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>cpr', ':let @+ = expand("%")<CR>', { desc = '[C]opy [P]ath [R]elative' })
@@ -902,3 +915,4 @@ vim.keymap.set('n', '<leader>cpa', ':let @+ = expand("%:p")<CR>', { desc = '[C]o
 -- windows
 vim.keymap.set('n', '<leader>wv', ':wincmd v<CR>', { desc = 'Creates [W]indow [V]ertical' })
 vim.keymap.set('n', '<leader>wr', ':wincmd r<CR>', { desc = '[W]indow [R]otates' })
+-- ***
