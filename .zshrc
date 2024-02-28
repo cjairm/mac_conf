@@ -150,11 +150,16 @@ alias tmclear="clear && tmux clear-history && clear"
 # Tmux alias
 # alias tml="tmux list-sessions"
 # alias tmn="tmux new-session -s"
-# alias tmdn="tmux detach && tmux new-session -s"
 # alias tmk="tmux kill-session -t"
 # alias tms="tmux switch-client -t"
 # alias tma="tmux attach-session"
 # alias tmd="tmux detach"
 # alias tmkall="tmux kill-server"
+# 
+# alias tmhadamenu="tmn hadamenu -c ~/Documents/projects/hadamenu/code"
+# alias tmhadaelectronics="tmn hadaelectronics -c ~/Documents/projects/hadaelectronics/code"
+# alias tmgo="tmn go -c ~/Documents/workspace/go"
+# alias tmcjairm="tmn cjairm -c ~/Documents/projects/cjairm.github.io/code"
+# alias tmpython="tmn python -c ~/Documents/workspace/python"
 
 [ -f ~/.config/docker/.docker.zsh ] && source ~/.config/docker/.docker.zsh
