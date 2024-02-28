@@ -291,7 +291,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VeryLazy', -- Sets the loading event to 'VeryLazy'
     config = function() -- This is the function that runs, AFTER loading
@@ -561,7 +561,6 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- Custom ***
-        arduino_language_server = {},
         black = {},
         codespell = {},
         clangd = {},
@@ -582,6 +581,8 @@ require('lazy').setup({
         flake8 = {},
         goimports = {},
         gopls = {},
+        gofumpt = {},
+        golines = {},
         isort = {},
         prettier = {},
         pyright = {},
@@ -915,7 +916,9 @@ require('lazy').setup({
           -- TS, JS, HTML, CSS
           null_ls.builtins.formatting.prettier.with(opts.prettier_formatting),
           -- Golang
+          null_ls.builtins.formatting.gofumpt,
           null_ls.builtins.formatting.goimports,
+          null_ls.builtins.formatting.golines,
           -- Bash
           null_ls.builtins.formatting.shfmt,
           -- Python
