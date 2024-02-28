@@ -157,6 +157,7 @@ alias tmclear="clear && tmux clear-history && clear"
 # alias tmkall="tmux kill-server"
 # 
 # alias tmhadamenu="tmn hadamenu -c ~/Documents/projects/hadamenu/code"
+# alias tmpi="tmn pi -c ~/Documents/projects/raspberry_pi/"
 # alias tmhadaelectronics="tmn hadaelectronics -c ~/Documents/projects/hadaelectronics/code"
 # alias tmgo="tmn go -c ~/Documents/workspace/go"
 # alias tmcjairm="tmn cjairm -c ~/Documents/projects/cjairm.github.io/code"
