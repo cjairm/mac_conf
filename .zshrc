@@ -135,6 +135,8 @@ alias yabaiconf="nvim ~/.config/yabai/yabairc"
 alias skhdrcconf="nvim ~/.config/skhd/skhdrc"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias nvimconf="nvim ~/.vimrc"
+alias nvim_sf="fd --type f --hidden --exclude .git | fzf-tmux -p  --reverse | xargs nvim"
+alias tmclear="clear && tmux clear-history && clear"
 
 # make zips 
 # git archive --format=zip HEAD -o <file_name>.zip
