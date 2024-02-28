@@ -134,7 +134,7 @@ alias ohmyzshconf="nvim ~/.oh-my-zsh"
 alias yabaiconf="nvim ~/.config/yabai/yabairc"
 alias skhdrcconf="nvim ~/.config/skhd/skhdrc"
 alias tmuxconf="nvim ~/.tmux.conf"
-alias nvimconf="nvim ~/.vimrc"
+alias nvimconf="nvim ~/.config/nvim/init.lua"
 alias nvim_sf="fd --type f --hidden --exclude .git | fzf-tmux -p  --reverse | xargs nvim"
 alias tmclear="clear && tmux clear-history && clear"
 
