@@ -12,6 +12,7 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HO
 
 brew install golangci-lint // Probably should be needed to be installed
 npm install -g eslint eslint_d // to make it work with eslint
+brew install arduino-cli // arduino related
 ```
 
 #### Copy the content of
