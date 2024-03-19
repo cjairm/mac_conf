@@ -562,7 +562,6 @@ require('lazy').setup({
       local servers = {
         -- Custom ***
         black = {},
-        codespell = {},
         clangd = {},
         eslint = {
           settings = {
@@ -686,7 +685,7 @@ require('lazy').setup({
       --    for various frameworks/libraries/etc. but you will have to
       --    set up the ones that are useful for you.
       --
-      --    Custom ***
+      -- Custom ***
       'rafamadriz/friendly-snippets',
       -- ***
     },
@@ -927,9 +926,6 @@ require('lazy').setup({
 
           -- Golang
           null_ls.builtins.diagnostics.golangci_lint,
-
-          -- Spell checker
-          null_ls.builtins.completion.spell,
         },
       }
 
