@@ -135,8 +135,6 @@ alias yabaiconf="nvim ~/.config/yabai/yabairc"
 alias skhdrcconf="nvim ~/.config/skhd/skhdrc"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias nvimconf="nvim ~/.config/nvim/init.lua"
-alias nvim_sf="fd --type f --hidden --exclude .git | fzf-tmux -p  --reverse | xargs nvim"
-alias tmclear="clear && tmux clear-history && clear"
 
 # make zips 
 # git archive --format=zip HEAD -o <file_name>.zip
@@ -147,6 +145,12 @@ alias tmclear="clear && tmux clear-history && clear"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.config/tmux/.tmux.zsh ] && source ~/.config/tmux/.tmux.zsh
+
+[ -f ~/.config/docker/.docker.zsh ] && source ~/.config/docker/.docker.zsh
+
+# Neovim alias
+# alias nvim_sf="fd --type f --hidden --exclude .git | fzf-tmux -p  --reverse | xargs nvim"
+#
 # Tmux alias
 # alias tml="tmux list-sessions"
 # alias tmn="tmux new-session -s"
@@ -155,12 +159,28 @@ alias tmclear="clear && tmux clear-history && clear"
 # alias tma="tmux attach-session"
 # alias tmd="tmux detach"
 # alias tmkall="tmux kill-server"
+# alias tmclear="clear && tmux clear-history && clear"
 # 
+# Personal
 # alias tmhadamenu="tmn hadamenu -c ~/Documents/projects/hadamenu/code"
 # alias tmpi="tmn pi -c ~/Documents/projects/raspberry_pi/"
 # alias tmhadaelectronics="tmn hadaelectronics -c ~/Documents/projects/hadaelectronics/code"
 # alias tmgo="tmn go -c ~/Documents/workspace/go"
 # alias tmcjairm="tmn cjairm -c ~/Documents/projects/cjairm.github.io/code"
 # alias tmpython="tmn python -c ~/Documents/workspace/python"
-
-[ -f ~/.config/docker/.docker.zsh ] && source ~/.config/docker/.docker.zsh
+#
+# Git
+# alias clean-branch="git checkout main && git pull origin main && git fetch && git remote prune origin && git branch -D"
+# alias fresh-install="git clean -Xfd && lrenpm"
+# alias fresh-compile="git clean -Xf && npm run clean"
+# alias updated-compile="fresh-compile && npm update --no-save"
+#
+# Kubernetes
+# alias k-set="unset AWS_VAULT && aws-vault exec eks-engineer --"
+# alias k-context="kubectl config use-context"
+# alias k-list="kubectl get pods -l"
+# alias k-follow="kubectl logs --follow"
+# 
+# Go
+# export GOPATH=~/Documents/golang/tutorials
+# export PATH=$PATH:$GOPATH/bin
