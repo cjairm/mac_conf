@@ -562,6 +562,7 @@ require('lazy').setup({
       local servers = {
         -- Custom ***
         black = {},
+        ['blade-formatter'] = {},
         clangd = {},
         eslint = {
           settings = {
@@ -586,6 +587,7 @@ require('lazy').setup({
         prettier = {},
         pyright = {},
         shfmt = {},
+        stimulus_ls = {},
         stylua = {},
         tsserver = {},
         -- ***
@@ -926,6 +928,9 @@ require('lazy').setup({
 
           -- Golang
           null_ls.builtins.diagnostics.golangci_lint,
+
+          -- Blade
+          null_ls.builtins.formatting.blade_formatter,
         },
       }
 
