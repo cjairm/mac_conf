@@ -1,3 +1,7 @@
+# Migrated to https://github.com/cjairm/devenv
+
+---
+
 # Productivity Configuration for Mac
 
 ## Install Raycast
